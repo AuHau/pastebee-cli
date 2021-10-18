@@ -1,77 +1,77 @@
 # PasteBee CLI
 
-![Node.js tests](https://github.com/ethersphere/swarm-cli/workflows/Node.js%20tests/badge.svg?branch=master)
+![Node.js tests](https://github.com/auhau/pastebee-cli/workflows/Node.js%20tests/badge.svg?branch=master)
 [![](https://img.shields.io/badge/made%20by-Swarm-blue.svg?style=flat-square)](https://swarm.ethereum.org/)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
 ![](https://img.shields.io/badge/npm-%3E%3D6.0.0-orange.svg?style=flat-square)
 ![](https://img.shields.io/badge/Node.js-%3E%3D12.0.0-orange.svg?style=flat-square)
 
+> Simple CLI tool to pipe text/logs to Swarm network
+
 This project is intended to be used with **Bee version 1.2.0**. Using it with older or newer Bee versions is not recommended and may not work.
+
+**This package currently works out of box, but might break in future as it depends on some specific behaviour of other components and projects. If you notice that it is broken please create issue, or better PR.**
+
+It is a bit of a hack project, so there might be a problems, please let me know if you have some problems.
 
 ## Table of Contents
 
 * [Table of Contents](#table-of-contents)
-* [Maintainers](#maintainers)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Maintainers](#maintainers)
 * [License](#license)
 
-## Description
-
-> Manage your Bee node and interact with the Swarm network via the CLI
-
-The goal of this project is to handle most of the Swarm operations through CLI at some point in the future.
-
-For the currently supported operations, see the [Commands](#commands) section.
 
 ## Installation
 
-### From npm
-
-To install globally (requires `npm root --global` to be writable):
+To use `pastebee-cli` across your whole system, it is recommended to install it globally:
 
 ```sh
-npm install --global @ethersphere/swarm-cli
-```
-
-To install locally:
-
-```sh
-cd [some directory for nodejs files]
-npm install @ethersphere/swarm-cli
-./node_modules/.bin/swarm-cli --help
+npm install --global pastebee-cli
 ```
 
 ## Usage
 
-## Configuration
+`pastebee-cli` takes input from STDIN, so pipe in whatever you feel like it! (it has to be a text though):
 
-The configuration file is placed in a hidden folder named `swarm-cli`.
+```shell
+$ echo "Hello World Swarm" | pastebee
+✔ Uploaded! https://pastebee.bzz.link/?34848f873ae2cc740957d45ad890e9f3bd18ad60e91b58cdf7c90b9f1f6c00b6
 
-In case of Unix-based systems this config path will be: `$HOME/.swarm-cli`
+// Send somebody link to your logs
+$ some-cool-command | pastebee --silence | mail -s "Check out my logs" somebody@example.com
+```
 
-On Windows systems: `$HOME\AppData\swarm-cli`
+```
+Usage: <some STDOUT producing command> | pastebee [options]
 
-The configuration file is saved with `600` file permission.
+Options:
+      --version  Show version number                                   [boolean]
+  -b, --bee      Bee node URL. By default Gateway is used.              [string]
+  -p, --stamp    Postage Batch Stamp ID. Required if custom Bee node is used.
+                                                                        [string]
+  -a, --hash     Displays only the reference not as URL.               [boolean]
+  -s, --silence  Output only the uploaded reference without any UX.    [boolean]
+  -h, --help     Show help                                             [boolean]
 
-On first run, this configuration will be generated with default values, that you are able to change on your demand under the before mentioned path.
+pastebee-cli is a simple tool for piping text to Swarm network.
 
-### System environment
+If you want to know more about Swarm network visit https://ethswarm.org/
+```
 
-With specific system environment variables you can alter the behaviour of the CLI
 
-* `BEE_API_URL` - API URL of Bee client
-* `BEE_DEBUG_API_URL` - Debug API URL of Bee client
-* `SWARM_CLI_CONFIG_FOLDER` - full path to a configuration folder
-* `SWARM_CLI_CONFIG_FILE` - configuration file name, defaults to config.json
+### Environmental variables
+
+You can configure the Bee node setting using environmental variables:
+
+ - `BEE_URL` - A URL to your Bee node
+ - `BEE_STAMP` - A Postage Stamp Batch ID to be used when uploaded. Required if you are using custom Bee node.
 
 # Contribute
 
-There are some ways you can make this module better:
-
-- Consult our [open issues](https://github.com/ethersphere/swarm-cli/issues) and take on one of them
-- Help our tests reach 100% coverage!
+This is simple hack project to demonstrate Swarm network and simplify common task. Feel free to create a PR with new features or bug fixes! 
 
 # Maintainers
 
