@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import yargs from 'yargs'
 import ora from 'ora'
 import { Readable } from 'stream'
