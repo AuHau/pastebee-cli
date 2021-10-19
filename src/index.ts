@@ -32,6 +32,11 @@ async function read(stream: Readable) {
       type: 'string',
       describe: 'Postage Batch Stamp ID. Required if custom Bee node is used.',
     })
+    .option('name', {
+      alias: 'n',
+      type: 'string',
+      describe: 'Name of the file that is stored in metadata.',
+    })
     .option('hash', {
       alias: 'a',
       type: 'boolean',
@@ -76,7 +81,9 @@ If you want to know more about Swarm network visit https://ethswarm.org/`).argv
     const bee = new Bee(beeNode)
 
     const date = new Date()
-    const filename = `pastebee-cli-${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${date.getHours()}-${date.getMinutes()}.txt`
+    const filename =
+      argv.name ||
+      `pastebee-cli-${date.getFullYear()}-${date.getMonth()}-${date.getDay()}-${date.getHours()}-${date.getMinutes()}.txt`
     const metadata = {
       name: filename,
       type: 'text/plain',
