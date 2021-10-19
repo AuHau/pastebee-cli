@@ -56,12 +56,23 @@ If you want to know more about Swarm network visit https://ethswarm.org/`).argv
     process.exit(1)
   }
 
-  const spinner = ora('Uploading data')
+  const spinner = ora('Reading data from STDIN')
 
   try {
-    if (!silence) spinner.start()
+    if (!silence) {
+      spinner.start()
+      setTimeout(() => {
+        spinner.text = 'Reading data from STDIN (it takes long time, have you piped in some data?)'
+      }, 5_000)
+      setTimeout(() => {
+        spinner.text = 'Reading data from STDIN (it takes really long time, maybe you want to exit? If so press CTRL+C)'
+      }, 12_000)
+    }
 
     const data = await read(process.stdin)
+
+    if (!silence) spinner.text = 'Uploading data'
+
     const bee = new Bee(beeNode)
 
     const date = new Date()
