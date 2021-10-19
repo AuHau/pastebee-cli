@@ -52,6 +52,7 @@ Options:
   -b, --bee      Bee node URL. By default Gateway is used.              [string]
   -p, --stamp    Postage Batch Stamp ID. Required if custom Bee node is used.
                                                                         [string]
+  -n, --name     Name of the file that is stored in metadata.           [string]
   -a, --hash     Displays only the reference not as URL.               [boolean]
   -s, --silence  Output only the uploaded reference without any UX.    [boolean]
   -h, --help     Show help                                             [boolean]
