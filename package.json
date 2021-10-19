@@ -1,6 +1,6 @@
 {
   "name": "pastebee-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Cli tool for pasting logs to Bee",
   "keywords": [
     "Bee",
