@@ -109,6 +109,9 @@ If you want to know more about Swarm network visit https://ethswarm.org/`).argv
     } else {
       spinner.succeed(`Uploaded! ${textResult}`)
     }
+
+    // We have running timeouts which leaves the command hanging until they expire, with this we force the exit.
+    process.exit(0)
   } catch (e) {
     const textResult = `There was an error during upload: ${e}`
 
