@@ -1,7 +1,6 @@
 # PasteBee CLI
 
-![Node.js tests](https://github.com/auhau/pastebee-cli/workflows/Node.js%20tests/badge.svg?branch=master)
-[![](https://img.shields.io/badge/made%20by-Swarm-blue.svg?style=flat-square)](https://swarm.ethereum.org/)
+[![](https://img.shields.io/badge/made%20by-Swarm-blue.svg?style=flat-square)](https://ethswarm.org/)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
 ![](https://img.shields.io/badge/npm-%3E%3D6.0.0-orange.svg?style=flat-square)
