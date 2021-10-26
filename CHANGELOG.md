@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/AuHau/pastebee-cli/compare/v0.1.2...v0.2.0) (2021-10-26)
+
+
+### Features
+
+* possibility to name the file ([#6](https://www.github.com/AuHau/pastebee-cli/issues/6)) ([d860e7a](https://www.github.com/AuHau/pastebee-cli/commit/d860e7ab89c3350197256fe4cae78b6c087b5cd0))
+
+
+### Bug Fixes
+
+* terminate hanging command ([#9](https://www.github.com/AuHau/pastebee-cli/issues/9)) ([3e2ab64](https://www.github.com/AuHau/pastebee-cli/commit/3e2ab64b7d1bf8dba30e12cf28c8d92b258275cf))
+
 ### 0.1.2 (2021-10-19)
 
 
