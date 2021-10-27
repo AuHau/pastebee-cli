@@ -8,6 +8,8 @@
 
 > Simple CLI tool to pipe text/logs to Swarm network
 
+![pastebee](https://user-images.githubusercontent.com/6072250/139036150-5de10e81-390c-416d-814a-581dcad75654.gif)
+
 This project is intended to be used with **Bee version 1.2.0**. Using it with older or newer Bee versions is not recommended and may not work.
 
 **This package currently works out of box, but might break in future as it depends on some specific behaviour of other components and projects. If you notice that it is broken please create issue, or better PR.**
